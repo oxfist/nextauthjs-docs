@@ -31,7 +31,7 @@ In `.env.local` create the following entries:
 
 ```
 AZURE_AD_CLIENT_ID=<copy Application (client) ID here>
-AZURE_AD_CLIENT_SECRET=<copy generated cleint secret value here>
+AZURE_AD_CLIENT_SECRET=<copy generated client secret value here>
 AZURE_AD_TENANT_ID=<copy the tenant id here>
 ```
 
@@ -44,7 +44,7 @@ Azure AD returns the profile picture in an ArrayBuffer, instead of just a URL to
 In `pages/api/auth/[...nextauth].js` find or add the `AzureAD` entries:
 
 ```js
-import AzureADProvider from 'next-auth/providers/azure-ad';
+import AzureADProvider from "next-auth/providers/azure-ad";
 
 ...
 providers: [

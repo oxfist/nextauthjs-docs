@@ -15,14 +15,14 @@ https://developer.spotify.com/dashboard/applications
 
 The **Spotify Provider** comes with a set of default options:
 
-- [Spotify Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/spotify.js)
+- [Spotify Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/spotify.ts)
 
 You can override any of the options to suit your own use case.
 
 ## Example
 
 ```js
-import SpotifyProvider from `next-auth/providers/spotify`
+import SpotifyProvider from "next-auth/providers/spotify";
 ...
 providers: [
   SpotifyProvider({

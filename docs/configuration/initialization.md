@@ -50,7 +50,7 @@ You could for example log the request, add headers, read `query` or `body` param
 :::tip
 Since this is a catch-all route, remember to check what kind of NextAuth.js "action" is running. Compare the REST API with the `req.query.nextauth` parameter.
 
-For example to execute something on the "callback" action when the request is a POST method, you can check for `req.query.nextauth.includes("callback") && req.mehod === "POST"`
+For example to execute something on the "callback" action when the request is a POST method, you can check for `req.query.nextauth.includes("callback") && req.method === "POST"`
 :::
 
 :::note
@@ -114,7 +114,7 @@ export default async function auth(req, res) {
 }
 ```
 
-For more details on all available actions and which methods are supported, please check out the [REST API documentation](/getting-started/rest-api) or the appropriate area in [the source code](https://github.com/nextauthjs/next-auth/blob/beta/src/core/index.ts)
+For more details on all available actions and which methods are supported, please check out the [REST API documentation](/getting-started/rest-api) or the appropriate area in [the source code](https://github.com/nextauthjs/next-auth/blob/main/src/core/index.ts)
 
 This way of initializing `NextAuth` is very powerful, but should be used sparingly.
 

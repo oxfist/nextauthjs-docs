@@ -19,7 +19,7 @@ The functionality provided for credentials based authentication is intentionally
 
 The **Credentials Provider** comes with a set of default options:
 
-- [Credentials Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/credentials.js)
+- [Credentials Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/credentials.ts)
 
 You can override any of the options to suit your own use case.
 
@@ -38,12 +38,12 @@ If you return an object it will be persisted to the JSON Web Token and the user 
 The Credentials provider's `authorize()` method also provides the request object as the second parameter (see example below).
 
 ```js title="pages/api/auth/[...nextauth].js"
-import CredentialsProvider from `next-auth/providers/credentials`
+import CredentialsProvider from "next-auth/providers/credentials";
 ...
 providers: [
   CredentialsProvider({
-    // The name to display on the sign in form (e.g. 'Sign in with...')
-    name: 'Credentials',
+    // The name to display on the sign in form (e.g. "Sign in with...")
+    name: "Credentials",
     // The credentials is used to generate a suitable form on the sign in page.
     // You can specify whatever fields you are expecting to be submitted.
     // e.g. domain, username, password, 2FA token, etc.
@@ -54,7 +54,7 @@ providers: [
     },
     async authorize(credentials, req) {
       // Add logic here to look up the user from the credentials supplied
-      const user = { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
+      const user = { id: 1, name: "J Smith", email: "jsmith@example.com" }
 
       if (user) {
         // Any object returned will be saved in `user` property of the JWT
@@ -63,8 +63,8 @@ providers: [
         // If you return null or false then the credentials will be rejected
         return null
         // You can also Reject this callback with an Error or with a URL:
-        // throw new Error('error message') // Redirect to error page
-        // throw '/path/to/redirect'        // Redirect to a URL
+        // throw new Error("error message") // Redirect to error page
+        // throw "/path/to/redirect"        // Redirect to a URL
       }
     }
   })
@@ -124,25 +124,4 @@ providers: [
 ]
 ```
 
-### Example UI
-
-This example below shows a complex configuration is rendered by the built in sign in page.
-
-You can also [use a custom sign in page](/configuration/pages#credentials-sign-in) if you want to provide a custom user experience.
-
-<Image src="/img/signin-complex.png"/>
-
-```js
-export const Image = ({ children, src, alt = "" }) => (
-  <div
-    style={{
-      padding: "0.2rem",
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
-    }}
-  >
-    <img alt={alt} src={src} />
-  </div>
-)
-```
+![](/img/signin-complex.png)

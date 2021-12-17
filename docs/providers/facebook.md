@@ -15,14 +15,14 @@ https://developers.facebook.com/apps/
 
 The **Facebook Provider** comes with a set of default options:
 
-- [Facebook Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/facebook.js)
+- [Facebook Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/facebook.ts)
 
 You can override any of the options to suit your own use case.
 
 ## Example
 
 ```js
-import FacebookProvider from `next-auth/providers/facebook`
+import FacebookProvider from "next-auth/providers/facebook";
 ...
 providers: [
   FacebookProvider({

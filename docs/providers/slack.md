@@ -22,14 +22,14 @@ Slack requires you that the redirect URL of your app uses `https`, even for loca
 
 The **Slack Provider** comes with a set of default options:
 
-- [Slack Provider options](https://github.com/nextauthjs/next-auth/blob/beta/src/providers/slack.ts)
+- [Slack Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/slack.ts)
 
 You can override any of the options to suit your own use case.
 
 ## Example
 
 ```js
-import SlackProvider from `next-auth/providers/slack`
+import SlackProvider from "next-auth/providers/slack";
 ...
 providers: [
   SlackProvider({

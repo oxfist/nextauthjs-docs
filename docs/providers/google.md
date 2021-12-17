@@ -15,14 +15,14 @@ https://console.developers.google.com/apis/credentials
 
 The **Google Provider** comes with a set of default options:
 
-- [Google Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/google.js)
+- [Google Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/google.ts)
 
 You can override any of the options to suit your own use case.
 
 ## Example
 
 ```js
-import GoogleProvider from `next-auth/providers/google`
+import GoogleProvider from "next-auth/providers/google";
 ...
 providers: [
   GoogleProvider({
@@ -76,7 +76,7 @@ const options = {
   callbacks: {
     async signIn({ account, profile }) {
       if (account.provider === "google") {
-        return profile.email_verified && profile.email.endsWith('@example.com')
+        return profile.email_verified && profile.email.endsWith("@example.com")
       }
       return true // Do different verification for other providers that don't have `email_verified`
     },

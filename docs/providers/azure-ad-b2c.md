@@ -4,11 +4,11 @@ title: Azure Active Directory B2C
 ---
 
 :::note
-Azure AD B2C returns the following fields on `Account`: 
-- `refresh_token_expires_in` (number) 
+Azure AD B2C returns the following fields on `Account`:
+- `refresh_token_expires_in` (number)
 - `not_before` (number)
 - `id_token_expires_in` (number)
-- `profile_info` (string). 
+- `profile_info` (string).
 
 See their [docs](https://docs.microsoft.com/en-us/azure/active-directory-b2c/access-tokens). Remember to add these fields to your database schema, in case if you are using an [Adapter](/adapters/overview).
 :::
@@ -25,7 +25,7 @@ https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant
 
 The **Azure Active Directory Provider** comes with a set of default options:
 
-- [Azure Active Directory Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/azure-ad-b2c.js)
+- [Azure Active Directory Provider options](https://github.com/nextauthjs/next-auth/blob/main/src/providers/azure-ad-b2c.ts)
 
 You can override any of the options to suit your own use case.
 
@@ -72,7 +72,7 @@ AZURE_AD_B2C_PRIMARY_USER_FLOW=<copy the name of the signin user flow you create
 In `pages/api/auth/[...nextauth].js` find or add the AZURE_AD_B2C entries:
 
 ```js
-import AzureADB2CProvider from 'next-auth/providers/azure-ad-b2c';
+import AzureADB2CProvider from "next-auth/providers/azure-ad-b2c";
 ...
 providers: [
   AzureADB2CProvider({
@@ -80,7 +80,7 @@ providers: [
     clientId: process.env.AZURE_AD_B2C_CLIENT_ID,
     clientSecret: process.env.AZURE_AD_B2C_CLIENT_SECRET,
     primaryUserFlow: process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW,
-    authorization: { params: { scope: 'offline_access openid' } },
+    authorization: { params: { scope: "offline_access openid" } },
   }),
 ]
 ...
@@ -100,7 +100,7 @@ Note: this is a second app registration (similar to Step 2) but with different s
 Nothing in `.env.local` needs to change here. The only update is in `pages/api/auth/[...nextauth].js` where you will need to add the additional scopes that were created in Step 4 above:
 
 ```js
-import AzureADB2CProvider from 'next-auth/providers/azure-ad-b2c';
+import AzureADB2CProvider from "next-auth/providers/azure-ad-b2c";
 ...
 providers: [
   AzureADB2CProvider({

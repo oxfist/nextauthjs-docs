@@ -27,7 +27,7 @@ You can override any of the options to suit your own use case.
 ## Example
 
 ```js
-import GitHubProvider from `next-auth/providers/github`
+import GitHubProvider from "next-auth/providers/github";
 ...
 providers: [
   GitHubProvider({
@@ -43,5 +43,5 @@ Only allows one callback URL per Client ID / Client Secret.
 :::
 
 :::tip
-Email address is not returned if privacy settings are enabled.
+Email address is always returned, even if the user doesn't have a public email address on their profile.
 :::
